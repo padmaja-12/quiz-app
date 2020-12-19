@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import quizService from './quizService/index';;
+import quizService from './quizService/index';
 import Header from './partials/header';
 import Popup from './components/Popup';
 import Answers from './components/Answer';
@@ -11,29 +11,17 @@ class QuizMania extends Component {
         count : 0,
         questionBank : [],
         score:0,
+        total : 5,
         responses:0
     }
      getQuestions = () => {
           quizService().then(questions => {
-             this.setState({questionBank  : questions})
+             this.setState({questionBank  : questions},() => {
+                 console.log(this.state.questionBank[this.state.count])
+             })
          })
-         
-        /*
-        quizService().then(res => {
-            console.log(res)
-        });
-        */
-     }
-     playAgain = () => {
-         this.getQuestions();
-         this.setState({
-             score : 0,
-             total: 5,
-            showButton: false,
-            questionAnswered: false,
-            displayPopup: 'flex'
-         })
-     }
+        }
+        
      computeAnswer = (answer,correctAnswer) => {
         if(answer === correctAnswer){
 
@@ -50,17 +38,23 @@ class QuizMania extends Component {
 
 
      insertData = (count) => {
-        this.setState({
-            question: this.state.questionBank[count].question,
-            answers: [  this.state.questionBank[count].answers[0], 
-                        this.state.questionBank[count].answers[1], 
-                        this.state.questionBank[count].answers[2], 
-                        this.state.questionBank[count].answers[3] 
-                    ],
-            correct: this.state.questionBank[count].correct,
-            count: this.state.count + 1
-        });
-    }
+         console.log(this.state.questionBank);
+         quizService().then(questions => {
+            this.setState({questionBank  : questions},() => {
+                console.log(this.state.questionBank[this.state.count])
+                this.setState({
+                    question: this.state.questionBank[this.state.count].question,
+                    answers: [  this.state.questionBank[this.state.count].answers[0], 
+                                this.state.questionBank[this.state.count].answers[1], 
+                                this.state.questionBank[this.state.count].answers[2], 
+                                this.state.questionBank[this.state.count].answers[3] 
+                            ],
+                    correct: this.state.questionBank[count].correct,
+                    count: this.state.count + 1
+                });
+            })
+    })
+}
 
 
      handleShowButton = () => {
@@ -101,6 +95,10 @@ class QuizMania extends Component {
 
 
     render() {
+        
+        if (this.state.questionBank.length==0) {
+            return <div class="loader">Loading...</div>;
+        }
         let { count, total, question, answers, correct, showButton, questionAnswered, displayPopup, score} = this.state;
         return (
             <div>
@@ -124,7 +122,6 @@ class QuizMania extends Component {
                     isAnswered={questionAnswered} 
                     increaseScore={this.handleIncreaseScore}
                 />
-
 
                 <div id="submit">
                     {showButton ? 

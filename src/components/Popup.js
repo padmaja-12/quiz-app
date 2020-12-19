@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import MyButton from '../util/Button';
 import Fade from 'react-reveal/Fade';
 
-
-
-
 class Popup extends Component {
     state = {
             time: 'start',
@@ -21,6 +18,10 @@ class Popup extends Component {
             this.setState({
                 time: 'end',
                 title: 'Congratulations!',
+                text: 'You have completed the quiz. <br /> You got: <strong>' + this.props.score + 
+                    '</strong> out of <strong>' + 
+                    this.props.total +
+                    '</strong> questions right.',
                 buttonText: 'Restart'
             });
 
@@ -29,7 +30,7 @@ class Popup extends Component {
         } else {
             
             //alert("FINISHED QUIZ");            
-            this.props.location.reload();// restart the application
+            window.location.reload();// restart the application
         }
     }
      
@@ -37,14 +38,6 @@ class Popup extends Component {
         return {__html: text};
     }
     
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            text: 'You have completed the quiz. <br /> You got: <strong>' + this.props.score + 
-            '</strong> out of <strong>' + 
-            this.props.total +
-            '</strong> questions right.'
-        })
-    }
 
     
     render() {

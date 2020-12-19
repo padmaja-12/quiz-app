@@ -49,36 +49,38 @@ class Answers extends Component {
     }
     render() {
         let { answers } = this.props;
-        let { classNames } = this.state;
+        //let { classNames } = this.state.classNames;
         
         let transition = {
             transitionName: "example",
             transitionEnterTimeout: 500,
             transitionLeaveTimeout: 300
         }
-        
+        if (!this.props.answers) {
+            return <div class="loader">Loading...</div>;
+        }
         return (
             <div id="answers">
                 <ul>
                     <li onClick={this.checkAnswer} 
-                        className={classNames[0]} data-id="1">
+                        className={this.state.classNames[0]} data-id="1">
                     <span>A</span> 
-                    <p>{answers[0]}</p></li>
+                    <p>{this.props?.answers[0]}</p></li>
 
                     <li onClick={this.checkAnswer} 
-                        className={classNames[1]} data-id="2">
+                        className={this.state.classNames[1]} data-id="2">
                     <span>B</span> 
-                    <p>{answers[1]}</p></li>
+                    <p>{this.props?.answers[1]}</p></li>
 
                     <li onClick={this.checkAnswer} 
-                        className={classNames[2]} data-id="3">
+                        className={this.state.classNames[2]} data-id="3">
                     <span>C</span> 
-                    <p>{answers[2]}</p></li>
+                    <p>{this.props?.answers[2]}</p></li>
 
                     <li onClick={this.checkAnswer} 
-                        className={classNames[3]} data-id="4">
+                        className={this.state.classNames[3]} data-id="4">
                     <span>D</span> 
-                    <p>{answers[3]}</p></li>
+                    <p>{this.props?.answers[3]}</p></li>
                 </ul>
             </div>
         );
