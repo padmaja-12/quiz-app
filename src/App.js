@@ -119,7 +119,7 @@ class QuizMania extends Component {
           <Popup
             style={{ display: displayPopup }}
             score={score}
-            total={total}
+            total={count}
             startQuiz={this.handleStartQuiz}
           />
           <div class="box">

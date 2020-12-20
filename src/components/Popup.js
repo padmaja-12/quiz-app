@@ -44,13 +44,18 @@ class Popup extends Component {
     return { __html: text };
   };
   componentWillReceiveProps(nextProps) {
-    this.setState({
-        text: 'You have completed the quiz. <br /> You got: <strong>' + this.props.score + 
-        '</strong> out of <strong>' + 
-        this.props.total +
-        '</strong> questions right.'
-    })
-}
+    console.log("From Popup:::::", nextProps);
+    if (nextProps.total === 5) {
+      this.setState({
+        text:
+          "You have completed the quiz. <br /> You got: <strong>" +
+          this.props.score +
+          "</strong> out of <strong>" +
+          this.props.total +
+          "</strong> questions right."
+      });
+    }
+  }
 
   render() {
     let { title, text, buttonText } = this.state;
