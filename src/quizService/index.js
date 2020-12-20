@@ -3,21 +3,21 @@ const qBank = [
     question:
       "Virgin Trains, Virgin Atlantic and Virgin Racing, are all companies owned by which famous entrepreneur?   ",
     answers: ["Richard Branson", "Alan Sugar", "Donald Trump", "Bill Gates"],
-    correct: "Richard Branson",
+    correct: "1",
     questionId: "099099"
   },
   {
     question:
       'Where is the train station "Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch"?',
     answers: ["Wales", "Moldova", "Czech Republic", "Denmark"],
-    correct: "Wales",
+    correct: "1",
     questionId: "183452"
   },
   {
     question:
       "Which company did Valve cooperate with in the creation of the Vive?",
     answers: ["HTC", "Oculus", "Google", "Razer"],
-    correct: "HTC",
+    correct: "1",
     questionId: "267908"
   },
   {
@@ -28,13 +28,13 @@ const qBank = [
       "Jason & Sarah",
       "Todd & Mira"
     ],
-    correct: "Thomas & Martha",
+    correct: "1",
     questionId: "333247"
   },
   {
     question: "What is the most common surname Wales?",
     answers: ["Jones", "Williams", "Davies", "Evans"],
-    correct: "Jones",
+    correct: "1",
     questionId: "496293"
   },
   {
@@ -46,27 +46,27 @@ const qBank = [
       "The Bushwhackers",
       "The British Bulldogs"
     ],
-    correct: "Demolition",
+    correct: "1",
     questionId: "588909"
   },
   {
     question:
       'What name represents the letter "M" in the NATO phonetic alphabet?',
     answers: ["Mike", "Matthew", "Mark", "Max"],
-    correct: "Mike",
+    correct: "1",
     questionId: "648452"
   },
   {
     question: "What is the first book of the Old Testament?",
     answers: ["Genesis", "Exodus", "Leviticus", "Numbers"],
-    correct: "Genesis",
+    correct: "1",
     questionId: "786649"
   },
   {
     question:
       "In the video-game franchise Kingdom Hearts, the main protagonist, carries a weapon with what shape?",
     answers: ["Key", "Sword", "Pen", "Cellphone"],
-    correct: "Key",
+    correct: "1",
     questionId: "839754"
   },
   {
@@ -78,7 +78,7 @@ const qBank = [
       "Care Bears",
       "Rubik’s Cube"
     ],
-    correct: "Cabbage Patch Kids",
+    correct: "1",
     questionId: "98390"
   }
 ];

@@ -1,18 +1,16 @@
-
 body {
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
   font-family: cursive;
 }
 
 .font_righteous {
-  font-family:  cursive;
+  font-family: cursive;
 }
 
 /*====================
   GENERAL CONSTANTS
 ======================*/
-
 
 .bck_black {
   background: #3c3c3c;
@@ -24,16 +22,19 @@ body {
   background: #ff4800;
 }
 .bck_yellow {
-  background: #ffa800;
+  background: #6200ffcb;
+}
+.box {
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 /*====================
       HEADER
 ======================*/
 
-
 header {
-  padding:10px 0px;
+  padding: 10px 0px;
 }
 
 header .header_logo {
@@ -51,38 +52,41 @@ header .header_logo_title {
       QUESTIONS
 ======================*/
 #question {
-  margin-top: 100px;
-  background-color: #F57C00;
+  margin-top: 10px;
+  background-color: #6200ffcb;
+  border-radius: 20px;
   color: white;
   padding: 10px;
   text-align: center;
 }
 
-#question h4{
+#question h4 {
   background-color: #fff;
   color: #0b0e21;
-  display:inline-block;
-  padding: 10px 25px;
+  display: inline-block;
+  padding: 10px 10px;
   font-size: 20px;
   font-weight: 600;
 }
 
-#question p{
+#question p {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 2px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /*====================
       ANSWERS
 ======================*/
 
-#answers ul{
+#answers ul {
   list-style-type: none;
   padding: 0;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -90,62 +94,64 @@ header .header_logo_title {
 
 #answers li {
   background-color: #fff;
-  border: 2px solid #FF9800;
+  border: 2px solid #6200ffcb;
+  border-radius: 20px;
   min-height: 70px;
   width: 100%;
   display: flex;
   margin-bottom: 30px;
-  transition: color .3s ease, border-color .3s ease, transform .3s ease;
+  transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
 }
 
 #answers li span {
-  background-color: #FF9800;
+  background-color: #6200ffcb;
   color: #fff;
   font-size: 30px;
   flex: 75px;
   display: flex;
+  border-radius: 15px;
   justify-content: center;
   align-items: center;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
 }
 
 #answers li p {
-  color: #0094da;
+  color: #050a0c;
   font-size: 16px;
   font-weight: 600;
   flex: calc(100% - 75px);
   margin: auto 20px;
-  transition: color .3s ease;
+  transition: color 0.3s ease;
 }
 
-#answers li:after{
+#answers li:after {
   display: block;
 }
 
 #answers li:hover {
-  transform: scale(.9);
+  transform: scale(0.9);
 }
 
 #answers li.right {
-  border-color: #4CAF50;
+  border-color: #4caf50;
   color: #fff;
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 #answers li.right span {
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 #answers li.right p {
-  color: #fff;   
+  color: #fff;
 }
 
 #answers li.wrong {
   border-color: #dc0a0a;
   color: #dc0a0a;
   background-color: #dc0a0a;
-  animation: shake 1.0s cubic-bezier(.36,.07,.19,.97) both;
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
@@ -166,27 +172,32 @@ header .header_logo_title {
 }
 
 @keyframes shake {
-  10%, 90% {
-      transform: translate3d(-1px, 0, 0);
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
   }
 
-  20%, 80% {
-      transform: translate3d(2px, 0, 0);
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
   }
 
-  30%, 50%, 70% {
-      transform: translate3d(-4px, 0, 0);
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
   }
 
-  40%, 60% {
-      transform: translate3d(4px, 0, 0);
-}
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
 .fancy-btn {
-  border: 2px solid #FF9800;
+  border: 2px solid #6200ffcb;
   border-radius: 0;
-  background-color: #FF9800;
+  background-color: #6200ffcb;
   color: #fff;
   display: inline-block;
   font-size: 18px;
@@ -194,7 +205,8 @@ header .header_logo_title {
   padding: 14px 75px;
   margin: 0 auto;
   text-transform: uppercase;
-  transition: color .2s ease, background-color .2s ease;
+  border-radius: 20px;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .fancy-btn:hover {
@@ -202,11 +214,9 @@ header .header_logo_title {
   color: #0b0e21;
 }
 
-
 /*====================
       POPUP CSS
 ======================*/
-
 
 .popup-container {
   position: fixed;
@@ -214,7 +224,8 @@ header .header_logo_title {
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0.5, 0.5);
+  border-radius: 20px;
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -229,7 +240,7 @@ header .header_logo_title {
 }
 
 .popup h1 {
-  background-color: #FF9800;
+  background-color: #6200ffcb;
   color: white;
   border-bottom: 1px solid #ccc;
   padding: 20px;
@@ -242,17 +253,15 @@ header .header_logo_title {
   margin: 20px 10% 0;
 }
 
-
-
 /*====================
       FOOTER
 ======================*/
 
 footer {
-  padding:50px 0px;
+  padding: 50px 0px;
   text-align: center;
   font-size: 60px;
-  color:#ffffff;
+  color: #ffffff;
   background: red;
 }
 
@@ -260,9 +269,9 @@ footer .footer_copyright {
   font-size: 18px;
 }
 
-.footer_copyright a{
+.footer_copyright a {
   text-decoration: none;
-  color:#0094da;
+  color: #0094da;
 }
 
 /*=====================
@@ -293,7 +302,7 @@ LOADER
 .loader:after {
   position: absolute;
   top: 0;
-  content: '';
+  content: "";
 }
 .loader:before {
   left: -1.5em;
